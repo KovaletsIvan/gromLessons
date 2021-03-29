@@ -9,16 +9,21 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container {
+  display: flex;
+
+  @include for-extra-small {
+    display: block;
+  }
+}
 .square {
   display: inline-block;
   width: 100px;
   height: 100px;
-  margin: 5px;
+  margin: 8px;
   background-color: #ff7f50;
-
   @include for-extra-small {
     display: block;
-    margin: 16px;
   }
   @include for-medium-up {
     background-color: #8a2be2;
