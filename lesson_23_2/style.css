@@ -17,16 +17,19 @@ body {
 }
 @media screen and (min-width: 600px) and (max-width: 900px) {
   .square {
+    display: inline-block;
     background-color: #8a2be2;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1200px) {
   .square {
+    display: inline-block;
     background-color: #a61;
   }
 }
 @media screen and (min-width: 1200px) {
   .square {
+    display: inline-block;
     background-color: #c47;
   }
 }
