@@ -15,22 +15,22 @@ body {
   margin: 8px;
   background-color: #ff7f50;
 }
-@media screen and (min-width: 600px) and (max-width: 900px) {
+@media screen and (orientation: landscape) and (min-width: 600px) and (max-width: 900px) {
   .square {
-    display: inline-block;
     background-color: #8a2be2;
+    display: inline-block;
   }
 }
-@media screen and (min-width: 900px) and (max-width: 1200px) {
+@media screen and (orientation: landscape) and (min-width: 900px) and (max-width: 1200px) {
   .square {
-    display: inline-block;
     background-color: #a61;
+    display: inline-block;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (orientation: landscape) and (min-width: 1200px) {
   .square {
-    display: inline-block;
     background-color: #c47;
+    display: inline-block;
   }
 }
 
