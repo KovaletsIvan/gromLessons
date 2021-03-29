@@ -14,7 +14,7 @@ body {
 }
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .container {
-    display: block;
+    flex-direction: column;
   }
 }
 

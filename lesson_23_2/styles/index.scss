@@ -13,7 +13,7 @@ body {
   display: flex;
 
   @include for-extra-small {
-    display: block;
+    flex-direction: column;
   }
 }
 .square {
