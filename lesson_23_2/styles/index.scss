@@ -5,26 +5,27 @@
 }
 body {
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 .square {
+  display: inline-block;
   width: 100px;
   height: 100px;
   margin: 8px;
   background-color: #ff7f50;
+  @include for-extra-small {
+    display: block;
+  }
 
   @include for-medium-up {
     background-color: #8a2be2;
-    display: inline-block;
   }
   @include for-large-up {
     background-color: #a61;
-    display: inline-block;
   }
   @include for-exta-large-up {
     background-color: #c47;
-    display: inline-block;
   }
 }
