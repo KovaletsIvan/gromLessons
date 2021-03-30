@@ -1,0 +1,66 @@
+@import "layout.scss";
+* {
+  box-sizing: border-box;
+}
+html {
+  text-transform: lowercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-grow: 1;
+  height: 100vh;
+  @include for-medium {
+    display: block;
+  }
+}
+.content {
+  display: flex;
+  @include for-small {
+    flex-direction: column;
+  }
+  @include for-medium {
+    width: 100vw;
+  }
+  @include for-large {
+    width: calc(100vw / 3 * 2);
+  }
+}
+.navigation {
+  height: 200px;
+  display: flex;
+  background-color: #ff7f50;
+  flex-grow: 1;
+  @include for-small {
+  }
+
+  @include for-large {
+    width: calc(100vw / 2);
+  }
+}
+.products-list {
+  height: 200px;
+  display: flex;
+  flex-grow: 1;
+  background-color: #006400;
+  @include for-small {
+    width: 100vw;
+  }
+
+  @include for-large {
+    width: calc(100vw / 2);
+  }
+}
+.news {
+  height: 200px;
+  display: flex;
+  flex-grow: 1;
+  background-color: #0ff;
+}
+span {
+  margin: auto;
+  padding: 8px;
+  background-color: #faebd7;
+  border-radius: 4px;
+}
