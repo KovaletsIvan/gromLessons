@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  color: #2b292d;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 1400px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=style.css.map */
