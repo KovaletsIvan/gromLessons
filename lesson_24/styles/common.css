@@ -8,3 +8,13 @@
   font-size: 18px;
   font-weight: 700;
 }
+@media screen and (min-width: 400px) {
+  .hide_destop {
+    display: none;
+  }
+}
+@media screen and (max-width: 399px) {
+  .hide_mobile {
+    display: none;
+  }
+}
