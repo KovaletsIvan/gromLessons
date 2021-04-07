@@ -1,0 +1,36 @@
+.about {
+  background-color: #f4f5f7;
+  width: 100%;
+  padding: 46px 15px;
+
+  @include for-large-up {
+    display: flex;
+    justify-content: space-between;
+    padding: 77px 130px 76px 130px;
+  }
+}
+.article {
+  @include for-large-up {
+    width: 555px;
+  }
+
+  &:last-child {
+    margin-top: 20px;
+
+    @include for-large-up {
+      margin-top: 0px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 23px;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
