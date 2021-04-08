@@ -675,6 +675,107 @@
   margin-bottom: 40px;
 }
 
+.order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 15px;
+  background-color: #F4F5F7;
+}
+@media screen and (min-width: 1400px) {
+  .order {
+    flex-direction: row;
+    padding-top: 73px;
+    padding-bottom: 72px;
+    align-items: flex-start;
+  }
+}
+.order__deteils {
+  max-width: 555px;
+}
+.order__illustration {
+  max-width: 200px;
+  margin: auto;
+}
+@media screen and (min-width: 1400px) {
+  .order__illustration {
+    margin: 0;
+    max-width: 269px;
+    margin-right: 121px;
+  }
+}
+.order__title {
+  margin: 0;
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: -0.25px;
+}
+@media screen and (min-width: 1400px) {
+  .order__title {
+    text-align: left;
+  }
+}
+.order__text {
+  margin: 0;
+  margin-top: 18px;
+  font-size: 22px;
+  line-height: 32px;
+}
+@media screen and (min-width: 1400px) {
+  .order__form {
+    display: flex;
+    margin-top: 26px;
+  }
+}
+.order__email {
+  height: 48px;
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 13px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid rgba(43, 41, 45, 0.2);
+  border-radius: 2px;
+  width: 100%;
+}
+@media screen and (min-width: 1400px) {
+  .order__email {
+    flex-grow: 1;
+    margin: 0;
+    margin-right: 10px;
+  }
+}
+.order__email::placeholder {
+  color: #2b292d;
+}
+.order__button {
+  margin-top: 12px;
+}
+@media screen and (max-width: 1399px) {
+  .order__button {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .order__button {
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+.order__terms {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2b292d99;
+}
+.order__terms-link {
+  color: #3142c6;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -687,10 +788,8 @@ html {
 
 .page {
   width: 100%;
-  overflow-x: hidden;
 }
-
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 1400px) {
   .page {
     display: flex;
     flex-direction: column;
