@@ -1,8 +1,11 @@
 .inbox {
+    display: flex;
+    flex-direction: column;
     padding: 50px 15px;
 
     @include for-large-up {
         display: flex;
+        flex-direction: row;
     }
     &__figure {
         display: flex;
@@ -15,9 +18,13 @@
         }
 
         &-image {
+            width: 290px;
+            height: 348px;
             @include for-large-up {
                 align-items: center;
+                justify-content: center;
                 width: 425px;
+                height: auto;
             }
 
             &-text {

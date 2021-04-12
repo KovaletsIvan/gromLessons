@@ -429,7 +429,7 @@
 .header__menu-icon {
   width: 18px;
   height: 13px;
-  background-image: url("./icons/hamburger.png");
+  background-image: url("https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson24/hw1/icon-hamburger.png");
   display: inline-block;
 }
 
@@ -460,7 +460,7 @@
 }
 .navigation__arrow {
   display: inline-block;
-  background-image: url(icons/arrow.png);
+  background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson24/hw1/arrow.png);
   width: 8px;
   height: 5px;
   margin-left: 11px;
@@ -781,11 +781,14 @@
 }
 
 .inbox {
+  display: flex;
+  flex-direction: column;
   padding: 50px 15px;
 }
 @media screen and (min-width: 1400px) {
   .inbox {
     display: flex;
+    flex-direction: row;
   }
 }
 .inbox__figure {
@@ -799,10 +802,16 @@
     margin: 142px 192px 138px 193px;
   }
 }
+.inbox__figure-image {
+  width: 290px;
+  height: 348px;
+}
 @media screen and (min-width: 1400px) {
   .inbox__figure-image {
     align-items: center;
+    justify-content: center;
     width: 425px;
+    height: auto;
   }
 }
 .inbox__figure-image-text {
@@ -1331,6 +1340,151 @@
   margin-top: 33px;
   font-size: 18px;
   line-height: 26px;
+}
+
+.hiring {
+  margin: 50px 15px;
+}
+@media screen and (min-width: 1400px) {
+  .hiring {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    max-height: 623px;
+    margin: auto;
+    margin-top: 106px;
+    margin-bottom: 110px;
+  }
+  .hiring__description {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+.hiring__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: -0.357143px;
+}
+.hiring__text {
+  margin: 0;
+  margin-top: 18px;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__text {
+    margin: auto;
+    margin-top: 20px;
+    width: 555px;
+  }
+}
+.hiring__button {
+  margin: 0;
+  margin-top: 30px;
+  width: 100%;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__button {
+    width: 247px;
+    height: 48px;
+    margin: auto;
+    margin-top: 28px;
+  }
+}
+.hiring__position {
+  display: flex;
+  margin-top: 15px;
+  border: 1px solid rgba(43, 41, 45, 0.2);
+  border-radius: 8px;
+  border-right: none;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__position {
+    height: 81px;
+    border: 1px solid rgba(43, 41, 45, 0.2);
+    width: 750px;
+  }
+  .hiring__position:hover {
+    background-color: #3141c5;
+    color: #ffff;
+  }
+  .hiring__position:hover .hiring__position__section {
+    background-color: #3141c5;
+    color: #ffff;
+  }
+  .hiring__position:hover .hiring__position-text {
+    color: #ffff;
+  }
+  .hiring__position:hover .hiring__position__section-button {
+    background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson24/hw1/icon-arrow-right-white.png);
+  }
+}
+.hiring__position-title {
+  margin: 0;
+  margin-top: 19px;
+  margin-left: 35px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__position-title {
+    margin: 0;
+    margin: 26px 20px 26px 25px;
+  }
+}
+.hiring__position-text {
+  margin: 0;
+  margin-top: 7px;
+  margin-left: 35px;
+  margin-bottom: 19px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2b292d99;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__position-text {
+    margin: 0;
+    margin: 28px 65px 27px 0px;
+    margin-left: auto;
+  }
+}
+.hiring__position:first-child {
+  margin-top: 39px;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__position:first-child {
+    margin: 0;
+    margin-top: 110px;
+  }
+}
+.hiring__position__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: auto;
+  margin-left: auto;
+  background-color: #d5d4d5;
+  border-radius: 0px 8px 8px 0px;
+  border: none;
+}
+@media screen and (min-width: 1400px) {
+  .hiring__position__section {
+    background-color: transparent;
+  }
+}
+.hiring__position__section-button {
+  border: none;
+  display: inline-block;
+  width: 7px;
+  height: 12px;
+  background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson24/hw1/icon-arrow-right.png);
 }
 
 * {
