@@ -1355,11 +1355,6 @@
     margin-top: 106px;
     margin-bottom: 110px;
   }
-  .hiring__description {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
 }
 .hiring__title {
   margin: 0;
@@ -1396,7 +1391,8 @@
     margin-top: 28px;
   }
 }
-.hiring__position {
+
+.vacancy {
   display: flex;
   margin-top: 15px;
   border: 1px solid rgba(43, 41, 45, 0.2);
@@ -1404,27 +1400,37 @@
   border-right: none;
 }
 @media screen and (min-width: 1400px) {
-  .hiring__position {
+  .vacancy {
     height: 81px;
     border: 1px solid rgba(43, 41, 45, 0.2);
     width: 750px;
   }
-  .hiring__position:hover {
-    background-color: #3141c5;
-    color: #ffff;
-  }
-  .hiring__position:hover .hiring__position__section {
-    background-color: #3141c5;
-    color: #ffff;
-  }
-  .hiring__position:hover .hiring__position-text {
-    color: #ffff;
-  }
-  .hiring__position:hover .hiring__position__section-button {
-    background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson24/hw1/icon-arrow-right-white.png);
+}
+.vacancy:hover {
+  background-color: #3141c5;
+  color: #ffff;
+}
+.vacancy:hover .vacancy__section {
+  background-color: #3141c5;
+  color: #ffff;
+}
+.vacancy:hover .vacancy-text {
+  color: #ffff;
+}
+.vacancy:hover .vacancy__section-button {
+  background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson24/hw1/icon-arrow-right-white.png);
+}
+.vacancy__description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (min-width: 1400px) {
+  .vacancy__description {
+    flex-direction: row;
   }
 }
-.hiring__position-title {
+.vacancy-title {
   margin: 0;
   margin-top: 19px;
   margin-left: 35px;
@@ -1433,12 +1439,12 @@
   line-height: 28px;
 }
 @media screen and (min-width: 1400px) {
-  .hiring__position-title {
+  .vacancy-title {
     margin: 0;
     margin: 26px 20px 26px 25px;
   }
 }
-.hiring__position-text {
+.vacancy-text {
   margin: 0;
   margin-top: 7px;
   margin-left: 35px;
@@ -1448,22 +1454,22 @@
   color: #2b292d99;
 }
 @media screen and (min-width: 1400px) {
-  .hiring__position-text {
+  .vacancy-text {
     margin: 0;
     margin: 28px 65px 27px 0px;
     margin-left: auto;
   }
 }
-.hiring__position:first-child {
+.vacancy:first-child {
   margin-top: 39px;
 }
 @media screen and (min-width: 1400px) {
-  .hiring__position:first-child {
+  .vacancy:first-child {
     margin: 0;
     margin-top: 110px;
   }
 }
-.hiring__position__section {
+.vacancy__section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1475,11 +1481,11 @@
   border: none;
 }
 @media screen and (min-width: 1400px) {
-  .hiring__position__section {
+  .vacancy__section {
     background-color: transparent;
   }
 }
-.hiring__position__section-button {
+.vacancy__section-button {
   border: none;
   display: inline-block;
   width: 7px;
