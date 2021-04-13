@@ -6,7 +6,7 @@
 
 .table {
   display: flex;
-  padding: 115px 132px;
+  padding: 0 132px;
   width: 1440px;
   height: 1000px;
   background: #141b1c;
@@ -17,6 +17,7 @@
   position: relative;
   width: 380px;
   height: 770px;
+  margin-top: 115px;
   margin-left: 18px;
   text-align: center;
   background: #334247;
@@ -74,7 +75,7 @@
 }
 .price-card__order-btn {
   margin: 0;
-  margin-top: 39px;
+  margin-top: 55px;
   margin-bottom: 40px;
   background: #5bb189;
   border-radius: 20px;
