@@ -4,6 +4,12 @@
   color: #ffff;
 }
 
+.price-tables {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 .table {
   display: flex;
   justify-content: center;
@@ -11,7 +17,6 @@
   width: 1440px;
   height: 1000px;
   background: #141b1c;
-  margin: auto;
 }
 
 .price-card {
