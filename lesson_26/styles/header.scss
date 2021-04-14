@@ -1,0 +1,58 @@
+.page-header {
+  display: flex;
+
+  &__button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin: 40px 0 80px 80px;
+    background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson26/hw1/LogoSmallSolid.png);
+  }
+  &__label {
+    margin: 0;
+    margin-top: 50px;
+    margin-left: 10px;
+    color: $blue-color;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  &__navigation {
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 540px;
+    height: 50px;
+    margin-left: auto;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include for-large-down {
+      display: none;
+    }
+  }
+  &__uploud-btn {
+    margin-top: 30px;
+    margin-left: 20px;
+    height: 50px;
+    width: 180px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0px 10px 40px rgba(25, 104, 252, 0.2);
+    box-shadow: 0px 10px 40px rgba(25, 104, 252, 0.3);
+    background-color: $blue-color;
+
+    @include for-large-down {
+      display: none;
+    }
+  }
+}

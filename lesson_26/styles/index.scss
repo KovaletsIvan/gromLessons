@@ -1,0 +1,27 @@
+@import "variables.scss";
+@import "commons.scss";
+@import "header.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+.page {
+  display: block;
+  flex-direction: column;
+  margin: auto;
+  width: 640px;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 104, 252, 0.0001) 0%,
+    rgba(25, 104, 252, 0.05) 23.07%,
+    rgba(25, 104, 252, 0.0001) 99.94%,
+    rgba(25, 104, 252, 0.05) 100%
+  );
+  background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson26/hw1/BackgroundDecor.png);
+
+  @include for-large-up {
+    width: 1440px;
+    padding: 0 130px 150px 130px;
+  }
+}

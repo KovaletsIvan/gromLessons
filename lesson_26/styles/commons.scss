@@ -1,0 +1,11 @@
+@mixin for-large-up {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin for-large-down {
+  @media screen and (max-width: 1024px - 1px) {
+    @content;
+  }
+}
