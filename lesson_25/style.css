@@ -6,7 +6,7 @@
 
 .price-tables {
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -17,6 +17,7 @@
   width: 1440px;
   height: 1000px;
   background: #141b1c;
+  margin-top: 109px;
 }
 
 .price-card {
