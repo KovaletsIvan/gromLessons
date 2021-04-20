@@ -1,15 +1,8 @@
-function run() {
-  var a = 0;
-
-  if (a == 1) {
-    return c;
-  }
-
-  for (let i = 1; i < 10; i++) {
-    console.log(i);
-  }
-
-  return (d = a);
+const n = 1000;
+let sum = 0;
+let num;
+for (let i = 0; i <= n; i += 1) {
+  sum += i;
 }
-
-run();
+ num = sum/1234 > sum % 1234 ? true : false;
+console.log(num);
