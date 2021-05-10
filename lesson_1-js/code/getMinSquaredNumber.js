@@ -6,7 +6,3 @@ export default (arr) => {
   const sortedArr = absArr.sort((a, b) => a - b);
   return sortedArr[0];
 };
-
-const arrOfNumbers = [-777, 3, -2, 6, 45, -20];
-const char = "ivan";
-const emptyArr = [];
