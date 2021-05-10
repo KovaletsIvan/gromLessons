@@ -1,7 +1,7 @@
 import sum, { getSquaredNumbers, getOddNumbers } from "./calculator.js";
 
 it("should to square numbers", () => {
-  const result = getSquaredNumbers([2, 3, 4, 5]);
+  const result = getSquaredArray([2, 3, 4, 5]);
   expect(result).toEqual([4, 9, 16, 25]);
 });
 
