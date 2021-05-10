@@ -1,4 +1,4 @@
-import sum, { getSquaredArray, getOddNumbers } from "./calculator.js";
+import getSum, { getSquaredArray, getOddNumbers } from "./calculator.js";
 
 it("should to square numbers", () => {
   const result = getSquaredArray([2, 3, 4, 5]);
@@ -11,6 +11,6 @@ it("should get Even numbers", () => {
 });
 
 it("should add two numbets ", () => {
-  const result = sum(2, 3);
+  const result = getSum(2, 3);
   expect(result).toEqual(5);
 });
