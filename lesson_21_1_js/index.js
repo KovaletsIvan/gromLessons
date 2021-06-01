@@ -1,16 +1,27 @@
-export const getItemsList = () => {
-  const elementsList = document.querySelectorAll(".technology");
-  console.dir(elementsList);
-  return elementsList;
+export const getTitle = () => {
+  const element = document.querySelector(".title").textContent;
+  return element;
 };
 
-export const getItemsArray = () => {
-  let elementsArray = document.querySelectorAll(".tool");
-  elementsArray = Array.from(elementsArray);
-  console.dir(elementsArray);
-  return elementsArray;
+getTitle();
+
+export const getDescription = () => {
+  const element = document.querySelector(".about").innerText;
+  return element;
 };
 
-getItemsList();
+getDescription();
 
-getItemsArray();
+export const getPlans = () => {
+  const element = document.querySelector(".plans").innerHTML;
+  return element;
+};
+
+getPlans();
+
+export const getGoal = () => {
+  const element = document.querySelector(".goal").outerHTML;
+  return element;
+};
+
+console.log(getGoal());
