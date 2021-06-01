@@ -1,4 +1,4 @@
-export const setTitle = (text) => {
-  const elem = document.querySelector(".title");
-  elem.textContent = text;
+export const setButton = (text) => {
+  const element = document.querySelector("body");
+  element.innerHTML = `<button> ${text} </button>`;
 };
