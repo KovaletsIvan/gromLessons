@@ -1,9 +1,7 @@
-export const squaredNumbers = () => {
-  const liElem = document.querySelectorAll(".number");
-  for (const elem of Array.from(liElem)) {
-    elem.setAttribute(
-      "data-squared-number",
-      elem.dataset.number * elem.dataset.number
-    );
-  }
+export const getSectiom = (num) => {
+  const dataNum = document.querySelector(`span[data-number="${num}"]`);
+  const divParent = dataNum.closest("div");
+  return divParent.dataset.section;
 };
+
+
