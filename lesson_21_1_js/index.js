@@ -1,6 +1,6 @@
-const alertFunc = () => {
-  alert("done");
+const inputElem = document.querySelector(".text-input");
+const getValueOfInput = () => {
+  console.log(inputElem.value);
 };
 
-const btn = document.querySelector(".create-btn");
-btn.addEventListener("click", alertFunc);
+inputElem.addEventListener("change", getValueOfInput);
