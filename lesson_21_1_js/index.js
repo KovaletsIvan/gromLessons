@@ -1,15 +1,15 @@
-const clickedText = () => {
-  console.log("clicked");
+const btnElem = document.querySelectorAll(".btn");
+
+const handelClick = () => {
+  btnElem[0].addEventListener("click", (event) => {
+    console.log(event.target.textContent);
+  });
+  btnElem[1].addEventListener("click", (event) => {
+    console.log(event.target.textContent);
+  });
 };
 
-const btnElem = document.querySelector(".single-use-btn");
+const nFunc = handelClick();
 
-btnElem.addEventListener("click", clickedText);
-
-btnElem.addEventListener("click", function () {
-  let counter = 0;
-  counter += 1;
-  if (counter == 1) {
-    btnElem.removeEventListener("click", clickedText);
-  }
-});
+btnElem[1].addEventListener("click", nFunc);
+btnElem[0].addEventListener("click", nFunc);
