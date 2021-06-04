@@ -1,5 +1,5 @@
 const bodyElem = document.querySelector("body");
 
-const handleClick = (event) => {
+export const handleClick = (event) => {
   console.log(event.target.textContent);
 };
