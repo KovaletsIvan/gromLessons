@@ -1,7 +1,11 @@
-const buttonElem = document.querySelector(".pagination");
+const buttonElem = document.querySelectorAll(".pagination__page");
 
-const handelClick = (event) => {
-  console.log(event.target.dataset.pageNumber);
+const handleClick = () => {
+  for (let i = 0; i < buttonElem.length; i++) {
+    buttonElem[i].addEventListener("click", (event) => {
+      console.log(event.target.dataset.pageNumber);
+    });
+  }
 };
 
-buttonElem.addEventListener("click", handelClick);
+handleClick();
