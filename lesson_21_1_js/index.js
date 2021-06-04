@@ -8,7 +8,7 @@ const handleClick = () => {
   }
 };
 
-
+handleClick();
 
 // const btnElem = document.querySelector("body");
 
