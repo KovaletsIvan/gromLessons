@@ -1,11 +1,7 @@
-const elements = document.querySelectorAll(".btn");
+const btnElem = document.querySelector("body");
 
-const handleClick = () => {
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', (event) => {
-      console.log(event.target.textContent);
-    });
-  }
+const handleClick = (event) => {
+  console.log(event.target.textContent);
 };
 
-handleClick();
+btnElem.addEventListener("click", handleClick);
