@@ -1,6 +1,7 @@
-const checkboxElem = document.querySelector(".task-status");
+const buttonElem = document.querySelector(".pagination");
 
-const getStatus = (event) => {
-  console.log(event.target.checked);
+const handelClick = (event) => {
+  console.log(event.target.dataset.pageNumber);
 };
-checkboxElem.addEventListener("change", getStatus);
+
+buttonElem.addEventListener("click", handelClick);
