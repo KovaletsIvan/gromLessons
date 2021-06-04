@@ -1,4 +1,4 @@
-const bodyElem = document.querySelector("body");
+const bodyElem = document.querySelector(".btn");
 
 const handleClick = (event) => {
   console.log(event.target.textContent);
