@@ -1,5 +1,7 @@
 const bodyElem = document.querySelector("body");
 
-export const handleClick = (event) => {
+const handleClick = (event) => {
   console.log(event.target.textContent);
 };
+
+bodyElem.addEventListener("click", handleClick);
