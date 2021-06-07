@@ -1,61 +1,48 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.rect {
-  border-radius: 8px;
+.page {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  justify-content: center;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.rect_div {
-  width: 300px;
-  height: 300px;
+.arena {
+  display: flex;
+}
+
+.sector {
+  display: flex;
+  flex-direction: column;
   background-color: coral;
-  margin-top: 16px;
-}
-
-.rect_p {
-  display: flex;
-  width: 200px;
-  height: 200px;
-  background-color: aqua;
-}
-
-.rect_span {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  background-color: wheat;
-}
-
-.events-list {
-  display: flex;
-  flex: 1;
-  height: 100px;
-  border: 3px solid #ccc;
   margin: 16px;
-  flex-direction: row;
-  overflow-x: auto;
-  padding: 8px;
-  justify-content: start;
 }
 
-.btn {
-  height: 32px;
-  min-width: 64px;
-  border: 3px solid #ccc;
-  outline: none;
+.sector__line {
+  display: flex;
+  height: 20px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sector__seat {
+  height: 16px;
+  width: 16px;
+  background-color: aqua;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
   cursor: pointer;
+}
+
+.board {
+  height: 100px;
+  width: 200px;
+  background-color: goldenrod;
   border-radius: 8px;
-  margin-left: 16px;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
 }

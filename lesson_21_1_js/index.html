@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event handler</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
-    <div class="pagination">
-        <button class="pagination__page" data-page-number="1">1</button>
-        <button class="pagination__page" data-page-number="2">2</button>
-        <button class="pagination__page" data-page-number="3">3</button>
+<body class="page">
+    <div class="arena"></div>
+    <div class="board">
+        <span>Selected seat</span>
+        <span class="board__selected-seat">-</span>
     </div>
-
     <script src="index.js"></script>
 </body>
 
