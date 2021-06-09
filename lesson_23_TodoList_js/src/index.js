@@ -67,4 +67,5 @@ const clearInput = () => {
 
 createTaskBtn.addEventListener("click", createNewObject);
 createTaskBtn.addEventListener("click", clearInput);
-listElem.addEventListener("click", getCheckboxElem);
+createTaskBtn.addEventListener("click", getCheckboxElem);
+window.addEventListener("load", getCheckboxElem);
