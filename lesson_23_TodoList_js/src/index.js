@@ -2,6 +2,14 @@ const listElem = document.querySelector(".list");
 const inputElem = document.querySelector(".task-input");
 const createTaskBtn = document.querySelector(".create-task-btn");
 
+const tasks = [
+  { text: "Buy milk", done: false },
+  { text: "Pick up Tom from airport", done: false },
+  { text: "Visit party", done: false },
+  { text: "Visit doctor", done: true },
+  { text: "Buy meat", done: true },
+];
+
 let counter = 0;
 const renderTasks = (tasksList) => {
   const tasksElems = tasksList
@@ -25,15 +33,17 @@ const renderTasks = (tasksList) => {
   counter++;
 };
 
+renderTasks(tasks);
+
 const createNewObject = () => {
   checkboxElem = document.querySelector(".list__item");
-  const tasks = [];
+  const generatedTasks = [];
   const newObj = { text: inputElem.value, done: false };
   if (inputElem.value == false) {
     return;
   }
-  tasks.push(newObj);
-  renderTasks(tasks);
+  generatedTasks.push(newObj);
+  renderTasks(generatedTasks);
 };
 
 const checkedTascks = (event) => {
@@ -58,9 +68,3 @@ const clearInput = () => {
 createTaskBtn.addEventListener("click", createNewObject);
 createTaskBtn.addEventListener("click", clearInput);
 createTaskBtn.addEventListener("click", getCheckboxElem);
-
-//  { text: "Buy milk", done: false },
-//   { text: "Pick up Tom from airport", done: false },
-//   { text: "Visit party", done: false },
-//   { text: "Visit doctor", done: true },
-//   { text: "Buy meat", done: true },
