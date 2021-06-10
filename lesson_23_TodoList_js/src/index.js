@@ -36,7 +36,7 @@ const renderTasks = (tasksList) => {
 renderTasks(tasks);
 
 const createNewObject = () => {
-  checkboxElem = document.querySelector(".list__item");
+  
   const generatedTasks = [];
   const newObj = { text: inputElem.value, done: false };
   if (inputElem.value == false) {
@@ -47,6 +47,7 @@ const createNewObject = () => {
 };
 
 const checkedTascks = (event) => {
+  checkboxElem = document.querySelector(".list__item");
   const checkbox = event.target.closest("li");
   checkbox.classList.toggle("list__item_done");
   if (event.target.checked) {
@@ -65,7 +66,8 @@ const clearInput = () => {
   inputElem.value = "";
 };
 
+window.addEventListener("load", getCheckboxElem);
 createTaskBtn.addEventListener("click", createNewObject);
 createTaskBtn.addEventListener("click", clearInput);
 createTaskBtn.addEventListener("click", getCheckboxElem);
-window.addEventListener("load", getCheckboxElem);
+
