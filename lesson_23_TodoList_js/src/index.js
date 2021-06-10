@@ -36,7 +36,6 @@ const renderTasks = (tasksList) => {
 renderTasks(tasks);
 
 const createNewObject = () => {
-  
   const generatedTasks = [];
   const newObj = { text: inputElem.value, done: false };
   if (inputElem.value == false) {
@@ -70,4 +69,3 @@ window.addEventListener("load", getCheckboxElem);
 createTaskBtn.addEventListener("click", createNewObject);
 createTaskBtn.addEventListener("click", clearInput);
 createTaskBtn.addEventListener("click", getCheckboxElem);
-
