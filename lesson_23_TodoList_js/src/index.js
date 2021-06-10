@@ -10,7 +10,7 @@ const tasks = [
   { text: "Buy meat", done: true },
 ];
 
-let counter = 0;
+// let counter = 0;
 const renderTasks = (tasksList) => {
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
@@ -19,7 +19,7 @@ const renderTasks = (tasksList) => {
       listItemElem.classList.add("list__item");
       const checkbox = document.createElement("input");
       checkbox.setAttribute("type", "checkbox");
-      checkbox.dataset.id = counter;
+      // checkbox.dataset.id = counter;
       checkbox.checked = done;
       checkbox.classList.add("list__item-checkbox");
       if (done) {
@@ -30,7 +30,7 @@ const renderTasks = (tasksList) => {
       return listItemElem;
     });
   listElem.append(...tasksElems);
-  counter++;
+  // counter++;
 };
 
 renderTasks(tasks);
