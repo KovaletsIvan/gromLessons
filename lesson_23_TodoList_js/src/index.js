@@ -46,7 +46,6 @@ const createNewObject = () => {
 };
 
 const checkedTascks = (event) => {
-  checkboxElem = document.querySelector(".list__item");
   const checkbox = event.target.closest("li");
   checkbox.classList.toggle("list__item_done");
   if (event.target.checked) {
@@ -65,7 +64,7 @@ const clearInput = () => {
   inputElem.value = "";
 };
 
-window.addEventListener("load", getCheckboxElem);
+// window.addEventListener("load", getCheckboxElem);
 createTaskBtn.addEventListener("click", createNewObject);
 createTaskBtn.addEventListener("click", clearInput);
 createTaskBtn.addEventListener("click", getCheckboxElem);
