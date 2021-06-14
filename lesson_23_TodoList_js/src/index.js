@@ -55,7 +55,6 @@ const checkboxOnChange = (event) => {
   tasks[checkboxId].done = true;
   listElem.innerHTML = "";
   renderTasks(tasks);
-  console.log(checkboxId);
 };
 
 const getCheckboxElem = () => {
