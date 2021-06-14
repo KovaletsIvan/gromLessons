@@ -10,8 +10,8 @@ const tasks = [
   { text: "Buy meat", done: true },
 ];
 
-let counter = 0;
 const renderTasks = (tasksList) => {
+  let counter = 0;
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done }) => {
@@ -19,7 +19,7 @@ const renderTasks = (tasksList) => {
       listItemElem.classList.add("list__item");
       const checkbox = document.createElement("input");
       checkbox.setAttribute("type", "checkbox");
-      checkbox.dataset.id = counter;
+      checkbox.dataset.id = counter++;
       checkbox.checked = done;
       checkbox.classList.add("list__item-checkbox");
       if (done) {
@@ -30,7 +30,6 @@ const renderTasks = (tasksList) => {
       return listItemElem;
     });
   listElem.append(...tasksElems);
-  counter++;
 };
 
 renderTasks(tasks);
@@ -45,20 +44,25 @@ const createNewObject = () => {
   renderTasks(tasks);
 };
 
-const checkedTascks = (event) => {
-  const checkbox = event.target.closest("li");
-  checkbox.classList.toggle("list__item_done");
-  if (event.target.checked) {
-    listElem.append(checkbox);
+const checkboxOnChange = (event) => {
+  const checkboxId = event.target.dataset.id;
+  if (tasks[checkboxId].done) {
+    tasks[checkboxId].done = false;
+    listElem.innerHTML = "";
+    renderTasks(tasks);
+    return;
   }
-  
+  tasks[checkboxId].done = true;
+  listElem.innerHTML = "";
+  renderTasks(tasks);
+  console.log(checkboxId);
 };
 
 const getCheckboxElem = () => {
   const checkboxElem = listElem.querySelectorAll(".list__item-checkbox");
-  for (let i = 0; i < checkboxElem.length; i++) {
-    checkboxElem[i].addEventListener("click", checkedTascks);
-  }
+  [...checkboxElem].map((elem) =>
+    elem.addEventListener("click", checkboxOnChange)
+  );
 };
 
 const clearInput = () => {
@@ -66,6 +70,7 @@ const clearInput = () => {
 };
 
 window.addEventListener("load", getCheckboxElem);
+listElem.addEventListener("click", getCheckboxElem);
 createTaskBtn.addEventListener("click", createNewObject);
 createTaskBtn.addEventListener("click", clearInput);
 createTaskBtn.addEventListener("click", getCheckboxElem);
