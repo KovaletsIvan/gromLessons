@@ -16,17 +16,18 @@ const studentsBirthDays = (students) => {
       sortedStudents.filter((elem) => new Date(elem.birthDate).getMonth() === i)
     );
   }
-  const filtredArrayOfnames = arrayOfnames.filter((elem) => elem.length > 0);
-  const newSort = [];
-  for (let i = 0; i < filtredArrayOfnames.length; i += 1) {
-    newSort.push(filtredArrayOfnames[i].map((elem) => elem.name));
+
+  const filtredNames = arrayOfnames.filter((elem) => elem.length > 0);
+  const namesInMonth = [];
+  for (let i = 0; i < filtredNames.length; i += 1) {
+    namesInMonth.push(filtredNames[i].map((elem) => elem.name));
   }
 
   let i = 0;
   for (const key in objectOfresult) {
-    objectOfresult[key] = newSort[i++];
+    objectOfresult[key] = namesInMonth[i++];
   }
-  console.log(objectOfresult);
+  console.log(objectOfresult, namesInMonth);
 };
 
 const arrOfStudents = [
