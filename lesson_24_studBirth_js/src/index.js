@@ -1,41 +1,40 @@
 const studentsBirthDays = (students) => {
-  const sortedStudents = students.sort(
-    (a, b) => new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
+  const sortStudents = students.sort(
+    (a, b) =>
+      new Date(a.birthDate).getMonth() - new Date(b.birthDate).getMonth()
   );
-  const monthFormatter = new Intl.DateTimeFormat("en", { month: "short" });
-  const objectOfresult = Object.fromEntries(
-    sortedStudents.map((elem) => [
-      monthFormatter.format(new Date(elem.birthDate)),
-      [],
-    ])
-  );
-  const arrayOfnames = [];
+  const formater = Intl.DateTimeFormat("en", { month: "short" });
+  const arrMonth = [
+    ...new Set(
+      sortStudents.map(({ birthDate }) => formater.format(new Date(birthDate)))
+    ),
+  ];
 
-  for (let i = 0; i < sortedStudents.length; i += 1) {
-    arrayOfnames.push(
-      sortedStudents.filter((elem) => new Date(elem.birthDate).getMonth() === i)
-    );
-  }
+  const result = arrMonth.reduce((obj, elem) => {
+    obj[elem] = sortStudents
+      .reduce((arrStudents, elemStudent) => {
+        if (
+          new Date(elemStudent.birthDate).getMonth() === arrMonth.indexOf(elem)
+        ) {
+          arrStudents.push(elemStudent);
+        }
+        return arrStudents.sort(
+          (a, b) =>
+            new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
+        );
+      }, [])
+      .map((elem) => elem.name);
+    return obj;
+  }, {});
 
-  const filtredNames = arrayOfnames.filter((elem) => elem.length > 0);
-  const namesInMonth = [];
-  for (let i = 0; i < filtredNames.length; i += 1) {
-    namesInMonth.push(filtredNames[i].map((elem) => elem.name));
-  }
-
-  let i = 0;
-  for (const key in objectOfresult) {
-    objectOfresult[key] = namesInMonth[i++];
-  }
-  console.log(objectOfresult, namesInMonth);
+  console.log(result);
 };
 
 const arrOfStudents = [
-  { name: "Tom", birthDate: "01/15/2010" },
-  { name: "Ben", birthDate: "01/17/2008" },
-  { name: "Sam", birthDate: "03/15/2010" },
-  { name: "Ivan", birthDate: "02/06/1986" },
-  { name: "Taras", birthDate: "02/07/2010" },
+  { name: "Tom", birthDate: "01,15,2010" },
+  { name: "Ben", birthDate: "01,17,2008" },
+  { name: "Sam", birthDate: "03,15,2010" },
+  { name: "John", birthDate: "02,06,1986" },
 ];
 
 studentsBirthDays(arrOfStudents);

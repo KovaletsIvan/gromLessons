@@ -25,7 +25,7 @@ const renderTasks = (tasksList) => {
       if (done) {
         listItemElem.classList.add("list__item_done");
       }
-      listItemElem.append(checkbox, text);
+      listItemElem.prepend(checkbox, text);
 
       return listItemElem;
     });
