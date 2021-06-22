@@ -10,24 +10,28 @@ const studentsBirthDays = (students) => {
     ),
   ];
 
-  const result = arrMonth.reduce((obj, elem) => {
-    obj[elem] = sortStudents
-      .reduce((arrStudents, elemStudent) => {
-        if (
-          new Date(elemStudent.birthDate).getMonth() === arrMonth.indexOf(elem)
-        ) {
-          arrStudents.push(elemStudent);
-        }
-        return arrStudents.sort(
-          (a, b) =>
-            new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
-        );
-      }, [])
-      .map((elem) => elem.name);
-    return obj;
-  }, {});
+  const result = arrMonth.map((elem) => ({
+    [elem]: sortStudents.reduce((arrStud, elemStud) => {
+      if (new Date(elemStud.birthDate).getMonth() === arrMonth.indexOf(elem)) {
+        arrStud.push(elemStud);
+      }
+      return arrStud.sort(
+        (a, b) =>
+          new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
+      );
+    }, []),
+  }));
 
-  console.log(result);
+  const finalResult = result.reduce(
+    (obj, elem) => Object.assign(obj, elem),
+    {}
+  );
+
+  Object.keys(finalResult).forEach((key) => {
+    finalResult[key] = finalResult[key].map((elem) => elem.name);
+  });
+
+  return finalResult;
 };
 
 const arrOfStudents = [
@@ -37,4 +41,23 @@ const arrOfStudents = [
   { name: "John", birthDate: "02,06,1986" },
 ];
 
-studentsBirthDays(arrOfStudents);
+console.log(studentsBirthDays(arrOfStudents));
+
+// const result = arrMonth.reduce((obj, elem) => {
+//   obj[elem] = sortStudents
+//     .reduce((arrStudents, elemStudent) => {
+//       if (
+//         new Date(elemStudent.birthDate).getMonth() === arrMonth.indexOf(elem)
+//       ) {
+//         arrStudents.push(elemStudent);
+//       }
+//       return arrStudents.sort(
+//         (a, b) =>
+//           new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
+//       );
+//     }, [])
+//     .map((elem) => elem.name);
+//   return obj;
+// }, {});
+
+// return result;
