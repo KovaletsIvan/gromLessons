@@ -43,21 +43,4 @@ const arrOfStudents = [
 
 console.log(studentsBirthDays(arrOfStudents));
 
-// const result = arrMonth.reduce((obj, elem) => {
-//   obj[elem] = sortStudents
-//     .reduce((arrStudents, elemStudent) => {
-//       if (
-//         new Date(elemStudent.birthDate).getMonth() === arrMonth.indexOf(elem)
-//       ) {
-//         arrStudents.push(elemStudent);
-//       }
-//       return arrStudents.sort(
-//         (a, b) =>
-//           new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
-//       );
-//     }, [])
-//     .map((elem) => elem.name);
-//   return obj;
-// }, {});
 
-// return result;
