@@ -3,11 +3,11 @@ const inputElem = document.querySelector(".task-input");
 const createTaskBtn = document.querySelector(".create-task-btn");
 
 const tasks = [
-  { text: "Buy milk", done: false },
-  { text: "Pick up Tom from airport", done: false },
-  { text: "Visit party", done: false },
-  { text: "Visit doctor", done: true },
-  { text: "Buy meat", done: true },
+  { text: "Buy milk", done: false, date: new Date() },
+  { text: "Pick up Tom from airport", done: false, date: new Date() },
+  { text: "Visit party", done: false, date: new Date() },
+  { text: "Visit doctor", done: true, date: new Date() },
+  { text: "Buy meat", done: true, date: new Date() },
 ];
 
 const renderTasks = (tasksList) => {
@@ -29,17 +29,18 @@ const renderTasks = (tasksList) => {
 
       return listItemElem;
     });
+
   listElem.append(...tasksElems);
 };
 
 renderTasks(tasks);
 
 const createNewObject = () => {
-  const newObj = { text: inputElem.value, done: false };
+  const newObj = { text: inputElem.value, done: false, date: new Date() };
   if (inputElem.value == false) {
     return;
   }
-  tasks.push(newObj);
+  tasks.unshift(newObj);
   listElem.innerHTML = "";
   renderTasks(tasks);
 };
@@ -49,7 +50,7 @@ const checkboxOnChange = (event) => {
   if (tasks[checkboxId].done) {
     tasks[checkboxId].done = false;
     listElem.innerHTML = "";
-    renderTasks(tasks);
+    renderTasks(tasks.sort((a, b) => b.date - a.date));
     return;
   }
   tasks[checkboxId].done = true;
