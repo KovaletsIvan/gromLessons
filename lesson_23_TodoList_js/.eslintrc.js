@@ -7,7 +7,8 @@ module.exports = {
     browser: true,
   },
   rules: {
-    "no-plusplus":0,
+    eqeqeq: 0,
+    "no-plusplus": 0,
     "no-console": 0,
     "no-alert": 0,
     "import/prefer-default-export": 0,
