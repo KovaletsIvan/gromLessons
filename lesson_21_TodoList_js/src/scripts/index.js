@@ -84,6 +84,12 @@ const checkboxElem = () => {
 };
 checkboxElem();
 
+const checkStorage = () => {
+  listItem.innerHTML = "";
+  renderListItems(getItem("tasksList"));
+};
+
+window.addEventListener("storage", checkStorage);
 listItem.addEventListener("click", checkboxElem);
 btnElem.addEventListener("click", createTask);
 btnElem.addEventListener("click", checkboxElem);
