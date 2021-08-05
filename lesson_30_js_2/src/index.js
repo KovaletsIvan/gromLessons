@@ -1,30 +1,21 @@
-const addImageV2 = (url) => {
-  // put your code here
-  const p = new Promise((resolve, reject) => {
-    const img = document.createElement('img');
-    img.setAttribute('alt', 'User avatar');
-    img.src = url;
+const imgElem = document.querySelector('.user__avatar');
+const spanUserName = document.querySelector('.user__name');
+const spanUserLocation = document.querySelector('.user__location');
+const inputElem = document.querySelector('.name-form__input');
+const btnElem = document.querySelector('.name-form__btn');
 
-    const pageElem = document.querySelector('.page');
-    pageElem.append(img);
-
-    const onImageLoaded = () => {
-      const { width, height } = img;
-      resolve({ width, height });
-    };
-
-    const onImageLoadError = () => reject('Image load failed');
-
-    img.addEventListener('load', onImageLoaded);
-
-    img.addEventListener('error', onImageLoadError);
-  });
-  return p;
+const renderUserData = (arg) => {
+  const { avatar_url, name, location } = arg;
+  imgElem.src = avatar_url;
+  spanUserName.textContent = name;
+  spanUserLocation.textContent = location;
 };
 
-// examples
+const request = () => {
+  const userName = inputElem.value;
+  fetch(`https://api.github.com/users/${userName}`).then((response) =>
+    response.json().then((result) => renderUserData(result))
+  );
+};
 
-const result = addImageV2('https://server.com/image.png');
-
-result.then((data) => console.log(data)); // ==> { width: 200, height: 100 }
-result.catch((error) => console.log(error)); // ==> 'Image load failed'
+btnElem.addEventListener('click', request);
