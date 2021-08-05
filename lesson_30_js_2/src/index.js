@@ -8,7 +8,7 @@ const renderUserData = (arg) => {
   const { avatar_url, name, location } = arg;
   imgElem.src = avatar_url;
   spanUserName.textContent = name;
-  spanUserLocation.textContent = location;
+  spanUserLocation.textContent = location ? `from ${location}` : '';
 };
 
 const request = () => {
