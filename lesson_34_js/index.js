@@ -33,26 +33,22 @@ const getUserData = (e) => {
     {}
   );
 
-  setDataOnServer(userData);
-};
-
-const getUserDataFromServer = () => {
-  fetch(url)
-    .then((resp) => resp.json())
-    .then((result) => {
-      if (result.length === 0) {
-        errorElem.textContent = 'Failed to create user';
-        return;
-      }
-      alert(JSON.stringify(result));
-    });
+  setDataOnServer(userData).then(() => {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((result) => alert(JSON.stringify(result)));
+  });
 };
 
 const clearInput = () => {
   [...formElem].map((elem) => (elem.value = ''));
 };
 
+// const errorText = () => (errorElem.textContent = 'Failed to create user');
+
 [...inputElem].map((input) => input.addEventListener('change', unDisabledBtn));
+// [...inputElem].map((input) => input.addEventListener('invalid', errorText));
+
 btnElem.addEventListener('click', getUserData);
-btnElem.addEventListener('click', getUserDataFromServer);
+// btnElem.addEventListener('click', getUserDataFromServer);
 btnElem.addEventListener('click', clearInput);
