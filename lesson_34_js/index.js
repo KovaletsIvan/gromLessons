@@ -12,7 +12,9 @@ const unDisabledBtn = () => {
       .filter((elem) => elem === true).length === 3
   ) {
     btnElem.disabled = false;
+    return;
   }
+  btnElem.disabled = true;
 };
 
 const setDataOnServer = (getUserData) => {
@@ -44,11 +46,6 @@ const clearInput = () => {
   [...formElem].map((elem) => (elem.value = ''));
 };
 
-// const errorText = () => (errorElem.textContent = 'Failed to create user');
-
 [...inputElem].map((input) => input.addEventListener('change', unDisabledBtn));
-// [...inputElem].map((input) => input.addEventListener('invalid', errorText));
-
 btnElem.addEventListener('click', getUserData);
-// btnElem.addEventListener('click', getUserDataFromServer);
 btnElem.addEventListener('click', clearInput);
