@@ -27,6 +27,10 @@ const setDataOnServer = (userData) => {
   });
 };
 
+const getUserDataFromServer = () => {
+ return fetch(url).then((resp) => resp.json());
+};
+
 const getUserData = (e) => {
   e.preventDefault();
   const formData = new FormData(formElem);
@@ -34,7 +38,9 @@ const getUserData = (e) => {
     (obj, [key, value]) => ({ ...obj, [key]: value }),
     {}
   );
-  setDataOnServer(userData).then(() => alert(JSON.stringify(userData)));
+  setDataOnServer(userData)
+    .then(getUserDataFromServer)
+    .then(() => alert(JSON.stringify(userData)));
 };
 
 //   errorElem.textContent = 'Failed to create user';
