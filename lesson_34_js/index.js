@@ -6,11 +6,7 @@ const errorElem = document.querySelector('.error-text');
 const url = 'https://61118641c38a0900171f124c.mockapi.io/api/v1/users';
 
 const unDisabledBtn = () => {
-  if (
-    [...inputElem]
-      .map((input) => input.reportValidity())
-      .filter((elem) => elem === true).length === 3
-  ) {
+  if (formElem.reportValidity()) {
     btnElem.disabled = false;
     return;
   }
@@ -46,6 +42,6 @@ const clearInput = () => {
   [...formElem].map((elem) => (elem.value = ''));
 };
 
-[...inputElem].map((input) => input.addEventListener('input', unDisabledBtn));
+formElem.addEventListener('input', unDisabledBtn);
 btnElem.addEventListener('submit', getUserData);
 btnElem.addEventListener('submit', clearInput);
