@@ -31,7 +31,7 @@ const getUserData = (e) => {
     {}
   );
 
-  setDataOnServer(JSON.stringify(userData))
+  setDataOnServer(userData)
     .then(() => fetch(url).then((resp) => resp.json()))
     .then((value) => alert(JSON.stringify(value[value.length - 1])));
 };
