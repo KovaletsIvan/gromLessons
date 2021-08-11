@@ -32,11 +32,9 @@ const getUserData = (e) => {
   );
 
   setDataOnServer(JSON.stringify(userData))
-    .then(() => fetch(`${url}`).then((resp) => resp.json()))
+    .then(() => fetch(url).then((resp) => resp.json()))
     .then((value) => alert(JSON.stringify(value[value.length - 1])));
 };
-
-//   errorElem.textContent = 'Failed to create user';
 
 const clearInput = () => {
   [...formElem].map((elem) => (elem.value = ''));
@@ -45,3 +43,5 @@ const clearInput = () => {
 formElem.addEventListener('input', unDisabledBtn);
 btnElem.addEventListener('submit', getUserData);
 btnElem.addEventListener('submit', clearInput);
+
+//   errorElem.textContent = 'Failed to create user';
