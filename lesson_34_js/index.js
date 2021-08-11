@@ -47,5 +47,5 @@ const clearInput = () => {
 };
 
 [...inputElem].map((input) => input.addEventListener('input', unDisabledBtn));
-btnElem.addEventListener('click', getUserData);
-btnElem.addEventListener('click', clearInput);
+btnElem.addEventListener('submit', getUserData);
+btnElem.addEventListener('submit', clearInput);
