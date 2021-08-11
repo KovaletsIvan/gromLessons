@@ -17,13 +17,13 @@ const unDisabledBtn = () => {
   btnElem.disabled = true;
 };
 
-const setDataOnServer = (getUserData) => {
+const setDataOnServer = (userData) => {
   return fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(getUserData),
+    body: JSON.stringify(userData),
   });
 };
 
@@ -34,13 +34,10 @@ const getUserData = (e) => {
     (obj, [key, value]) => ({ ...obj, [key]: value }),
     {}
   );
-
-  setDataOnServer(userData).then(() => {
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((result) => alert(JSON.stringify(result)));
-  });
+  setDataOnServer(userData).then(() => alert(JSON.stringify(userData)));
 };
+
+//   errorElem.textContent = 'Failed to create user';
 
 const clearInput = () => {
   [...formElem].map((elem) => (elem.value = ''));
