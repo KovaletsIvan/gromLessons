@@ -27,10 +27,6 @@ const setDataOnServer = (userData) => {
   });
 };
 
-const getUserDataFromServer = () => {
-  return fetch(url).then((resp) => resp.json());
-};
-
 const getUserData = (e) => {
   e.preventDefault();
   const formData = new FormData(formElem);
@@ -38,8 +34,9 @@ const getUserData = (e) => {
     (obj, [key, value]) => ({ ...obj, [key]: value }),
     {}
   );
-  setDataOnServer(userData)
-    .then(getUserDataFromServer)
+
+  setDataOnServer(JSON.stringify(userData))
+    .then(() => fetch(`${url}`).then((resp) => resp.json()))
     .then((value) => alert(JSON.stringify(value[value.length - 1])));
 };
 
