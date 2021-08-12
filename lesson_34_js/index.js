@@ -8,9 +8,11 @@ const url = 'https://61118641c38a0900171f124c.mockapi.io/api/v1/users';
 const unDisabledBtn = () => {
   if (formElem.reportValidity()) {
     btnElem.disabled = false;
+    errorElem.textContent = '';
     return;
   }
   btnElem.disabled = true;
+  errorElem.textContent = 'Failed to create user';
 };
 
 const setDataOnServer = (userData) => {
