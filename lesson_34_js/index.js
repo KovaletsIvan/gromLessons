@@ -32,10 +32,9 @@ const getUserData = (e) => {
   );
   [...formElem].map((elem) => (elem.value = ''));
   setDataOnServer(userData)
-    .then(() => fetch(url).then((resp) => resp.json()))
-    .then((value) => alert(JSON.stringify(value[value.length - 1])));
+    .then((resp) => resp.json())
+    .then((value) => alert(JSON.stringify(value)));
 };
-
 
 formElem.addEventListener('input', unDisabledBtn);
 formElem.addEventListener('submit', getUserData);
