@@ -32,8 +32,8 @@ const getUserData = (e) => {
   );
   setDataOnServer(userData)
     .then((resp) => resp.json())
-    .then((value) => alert(JSON.stringify(value)));
-  [...inputElem].map((elem) => (elem.value = ''));
+    .then((value) => alert(JSON.stringify(value)))
+    .then(() => [...inputElem].map((elem) => (elem.value = '')));
 };
 
 formElem.addEventListener('input', unDisabledBtn);
