@@ -27,10 +27,11 @@ const getUser = () => {
   return fetch(`${url}/${user}`)
     .then((response) => response.json())
     .then((result) => {
-      imgElem.src = result.avatar_url;
-      spanUserName.textContent = result.name;
-      spanLocation.textContent = result.location;
-      const userReposetory = result.repos_url;
+      const { name, location, avatar_url, repos_url } = result;
+      imgElem.src = avatar_url;
+      spanUserName.textContent = name;
+      const userReposetory = repos_url;
+      spanLocation.textContent = location ? `from ${location}` : '';
       return userReposetory;
     })
     .then((val) => fetch(val))
