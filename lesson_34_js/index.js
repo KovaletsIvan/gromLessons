@@ -8,7 +8,7 @@ const url = 'https://61118641c38a0900171f124c.mockapi.io/api/v1/users';
 const unDisabledBtn = () => {
   if (formElem.reportValidity()) {
     btnElem.disabled = false;
-    errorElem.textContent = '';
+    errorElem.textContent = ''
     return;
   }
   btnElem.disabled = true;
@@ -35,7 +35,11 @@ const getUserData = (e) => {
     .then((resp) => resp.json())
     .then((value) => alert(JSON.stringify(value)))
     .then(() => [...inputElem].map((elem) => (elem.value = '')))
+<<<<<<< HEAD
     .catch((e) => (errorElem.textContent = 'Failed to create user'));
+=======
+    .catch((e)=>errorElem.textContent = 'Failed to create user')
+>>>>>>> 798d748e0675151cc3aea8ebf0ed34dd921abefa
 };
 
 formElem.addEventListener('change', unDisabledBtn);
