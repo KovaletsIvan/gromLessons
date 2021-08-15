@@ -23,7 +23,6 @@ const createListElement = (arr) => {
 };
 
 const getUser = () => {
-  imgElem.src = defaultAvatar;
   const user = inputElem.value;
   return fetch(`${url}/${user}`)
     .then((response) => response.json())
