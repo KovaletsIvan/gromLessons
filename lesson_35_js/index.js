@@ -4,18 +4,19 @@ const btn = document.querySelector('.name-form__btn');
 const spanUserName = document.querySelector('.user__name');
 const spanLocation = document.querySelector('.user__location');
 const spinerElem = document.querySelector('.spinner');
+const repoListElem = document.querySelector('.repo-list');
 
 imgElem.src = 'https://avatars3.githubusercontent.com/u10001';
 const url = 'https://api.github.com/users';
 
 const createListElement = (arr) => {
-  const repoListElem = document.querySelector('.repo-list');
   const creator = arr.map((elem) => {
     const liElem = document.createElement('li');
     liElem.classList.add('repo-list__item');
     liElem.textContent = elem;
     return liElem;
   });
+  repoListElem.innerHTML = '';
   repoListElem.append(...creator);
 };
 
