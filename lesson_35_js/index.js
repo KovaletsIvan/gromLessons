@@ -6,7 +6,9 @@ const spanLocation = document.querySelector('.user__location');
 const spinerElem = document.querySelector('.spinner');
 const repoListElem = document.querySelector('.repo-list');
 
-imgElem.src = 'https://avatars3.githubusercontent.com/u10001';
+const defaultAvatar = 'https://avatars3.githubusercontent.com/u10001';
+
+imgElem.src = defaultAvatar;
 const url = 'https://api.github.com/users';
 
 const createListElement = (arr) => {
@@ -21,6 +23,7 @@ const createListElement = (arr) => {
 };
 
 const getUser = () => {
+  imgElem.src = defaultAvatar;
   const user = inputElem.value;
   return fetch(`${url}/${user}`)
     .then((response) => response.json())
