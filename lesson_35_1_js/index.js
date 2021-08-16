@@ -1,18 +1,13 @@
-const fetchUser = async (userId) => {
-  try {
-    const respons = await fetch(`https://api.github.com/users/${userId}`);
-    if (respons.status === 404) {
-      return null;
-    }
-    const userData = await respons.json();
-    return userData;
-  } catch (e) {
-    throw new Error('Failed to fetch user');
-  }
+const fetchFunc = (userId) => {
+  return fetch(`https://api.github.com/users/${userId}`)
+    .then((response) => response.json())
+    .then((result) => result.blog);
 };
 
-fetchUser('KovaletsIvan')
-  .then((userData) => console.log(userData))
-  .catch((err) => alert(err.message));
+const getUsersBlogs = async (arr) => {
+  await Promise.all(arr.map((elem) => fetchFunc(elem))).then((result) =>
+    console.log(result)
+  );
+};
 
-//   response.status === 404 ||
+getUsersBlogs(['google', 'facebook','github','twitter']);
