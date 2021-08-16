@@ -36,12 +36,11 @@ const getUser = async () => {
 
     const arrOfUsersRepo = await fetch(userReposetoryUrl);
     const repoList = await arrOfUsersRepo.json();
-
+    spinerElem.classList.toggle('spinner_hidden');
     const arr = [];
     repoList.map((elem) => {
       arr.push(elem.name);
     });
-    spinerElem.classList.toggle('spinner_hidden');
 
     createListElement(arr);
     spinerElem.classList.toggle('spinner');
