@@ -41,8 +41,6 @@ const getUser = async () => {
     createListElement(arr);
     spinerElem.classList.toggle('spinner');
   } catch (e) {
-    imgElem.src = defaultAvatar;
-    repoListElem.innerHTML = '';
     alert('Failed to load data');
   }
 };
