@@ -27,21 +27,17 @@ const getUser = async () => {
     const user = inputElem.value;
     const response = await fetch(`${url}/${user}`);
     const userData = await response.json();
-
     const { name, location, avatar_url, repos_url } = userData;
     imgElem.src = avatar_url;
     spanUserName.textContent = name;
-    const userReposetoryUrl = repos_url;
     spanLocation.textContent = location ? `from ${location}` : '';
-
-    const arrOfUsersRepo = await fetch(userReposetoryUrl);
+    const arrOfUsersRepo = await fetch(repos_url);
     const repoList = await arrOfUsersRepo.json();
     spinerElem.classList.toggle('spinner_hidden');
     const arr = [];
     repoList.map((elem) => {
       arr.push(elem.name);
     });
-
     createListElement(arr);
     spinerElem.classList.toggle('spinner');
   } catch (e) {
