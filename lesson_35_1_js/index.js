@@ -5,9 +5,9 @@ export const fetchFunc = (userId) => {
 };
 
 export const getUsersBlogs = async (arr) => {
-  await Promise.all(arr.map((elem) => fetchFunc(elem))).then((result) =>
-    console.log(result)
-  );
+  const result = await Promise.all(arr.map((elem) => fetchFunc(elem)));
+
+  return result;
 };
 
-getUsersBlogs(['google', 'facebook','github','twitter']);
+getUsersBlogs(['google', 'facebook', 'github', 'twitter']);
