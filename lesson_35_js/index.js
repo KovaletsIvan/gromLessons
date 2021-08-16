@@ -22,31 +22,34 @@ const createListElement = (arr) => {
   repoListElem.append(...creator);
 };
 
-const getUser = () => {
-  const user = inputElem.value;
-  return fetch(`${url}/${user}`)
-    .then((response) => response.json())
-    .then((result) => {
-      const { name, location, avatar_url, repos_url } = result;
-      imgElem.src = avatar_url;
-      spanUserName.textContent = name;
-      const userReposetory = repos_url;
-      spanLocation.textContent = location ? `from ${location}` : '';
-      return userReposetory;
-    })
-    .then((val) => fetch(val))
-    .then((resp) => resp.json())
-    .then((result) => {
-      const arr = [];
-      result.map((elem) => {
-        arr.push(elem.name);
-      });
-      spinerElem.classList.toggle('spinner_hidden');
-      return arr;
-    })
-    .then((arr) => createListElement(arr))
-    .then(() => spinerElem.classList.toggle('spinner'))
-    .catch(() => alert('Failed to load data'));
+const getUser = async () => {
+  try {
+    const user = inputElem.value;
+    const response = await fetch(`${url}/${user}`);
+    const userData = await response.json();
+
+    const { name, location, avatar_url, repos_url } = userData;
+    imgElem.src = avatar_url;
+    spanUserName.textContent = name;
+    const userReposetoryUrl = repos_url;
+    spanLocation.textContent = location ? `from ${location}` : '';
+
+    const arrOfUsersRepo = await fetch(userReposetoryUrl);
+    const repoList = await arrOfUsersRepo.json();
+
+    const arr = [];
+    repoList.map((elem) => {
+      arr.push(elem.name);
+    });
+    spinerElem.classList.toggle('spinner_hidden');
+
+    createListElement(arr);
+    spinerElem.classList.toggle('spinner');
+  } catch (e) {
+    imgElem.src = defaultAvatar;
+    repoListElem.innerHTML = '';
+    alert('Failed to load data');
+  }
 };
 
 btn.addEventListener('click', getUser);
