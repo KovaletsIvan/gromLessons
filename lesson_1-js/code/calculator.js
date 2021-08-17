@@ -24,4 +24,4 @@ export const calc = (expression) => {
   return `${expression} = ${result}`;
 };
 
-//commit
+
