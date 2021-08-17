@@ -6,7 +6,6 @@ export const fetchFunc = (userId) => {
 
 export const getUsersBlogs = async (arr) => {
   const result = await Promise.all(arr.map((elem) => fetchFunc(elem)));
-
   return result;
 };
 
