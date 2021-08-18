@@ -1,5 +1,5 @@
 import { setItem, getItem } from './storage.js';
-import { getTasksList, setTask,updateTask } from './tasksGetWhey.js';
+import { getTasksList, setTask, updateTask } from './tasksGetWhey.js';
 
 const btnElem = document.querySelector('.create-task-btn');
 const listItem = document.querySelector('.list');
@@ -78,16 +78,7 @@ const checkboxChange = (event) => {
       listItem.innerHTML = '';
       renderListItems(getItem('tasksList'));
     });
-
 };
-
-const checkboxElem = () => {
-  const checkboxItem = listItem.querySelectorAll('.list__item-checkbox');
-  [...checkboxItem].map((elem) =>
-    elem.addEventListener('click', checkboxChange)
-  );
-};
-checkboxElem();
 
 const checkStorage = () => {
   listItem.innerHTML = '';
@@ -100,7 +91,7 @@ document.addEventListener('DOMContentLoadet', () => {
     renderListItems(getItem('tasksList'));
   });
 });
+
 window.addEventListener('storage', checkStorage);
-listItem.addEventListener('click', checkboxElem);
+listItem.addEventListener('click', checkboxChange);
 btnElem.addEventListener('click', createTask);
-btnElem.addEventListener('click', checkboxElem);
