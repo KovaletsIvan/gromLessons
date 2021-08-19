@@ -5,12 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.printProfile = void 0;
 
-const printProfile = profileData => {
-  const {
-    name,
-    company
-  } = profileData;
-  console.log(`${name} from ${company}`);
+var printProfile = function printProfile(profileData) {
+  var name = profileData.name,
+      company = profileData.company;
+  console.log("".concat(name, " from ").concat(company));
 };
 
 exports.printProfile = printProfile;
