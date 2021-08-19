@@ -1,11 +1,10 @@
-import { printProfile } from './profile';
+import { printProfile } from './profile.js';
 
 const userData = {
   name: 'Tom',
   age: 17,
 };
-
-const profile = {
+export const profile = {
   ...userData,
   company: 'Gromcode',
 };
