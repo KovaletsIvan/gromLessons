@@ -1,9 +1,9 @@
 {
-    "presets":[
+    "presets": [
         [
             "@babel/preset-env",
             {
-                "targets":" > 1%"
+                "targets": "> 1%"
             }
         ]
     ]
