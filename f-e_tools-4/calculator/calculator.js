@@ -1,4 +1,4 @@
-// file path: calculator/index.js
+
 
 // экспортируйте sum и mult как именной export
 
