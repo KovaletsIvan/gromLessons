@@ -1,13 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.updateTask = exports.setTask = exports.getTasksList = void 0;
-
-require("core-js/modules/es.promise.js");
-
 const _excluded = ["_id"];
+import "core-js/modules/es.promise.js";
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -32,26 +24,18 @@ const mapTasks = tasks => tasks.map(_ref => {
   });
 });
 
-const getTasksList = () => fetch(baseUrl).then(respose => respose.json()).then(tasks => mapTasks(tasks));
-
-exports.getTasksList = getTasksList;
-
-const setTask = taskData => fetch(baseUrl, {
+export const getTasksList = () => fetch(baseUrl).then(respose => respose.json()).then(tasks => mapTasks(tasks));
+export const setTask = taskData => fetch(baseUrl, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json;charset=utf-8'
   },
   body: JSON.stringify(taskData)
 });
-
-exports.setTask = setTask;
-
-const updateTask = (taskId, updatedTaskData) => fetch("".concat(baseUrl, "/").concat(taskId), {
+export const updateTask = (taskId, updatedTaskData) => fetch("".concat(baseUrl, "/").concat(taskId), {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json;charset=utf-8'
   },
   body: JSON.stringify(updatedTaskData)
 });
-
-exports.updateTask = updateTask;
