@@ -1,5 +1,5 @@
 const baseUrl =
-  'https://crudcrud.com/api/3a146bca6ea94c53a0392f3cfce32b9c/task';
+  'https://crudcrud.com/api/92603e6b9fa7434a99ab7143b0ab0ac6/task';
 
 const mapTasks = (tasks) =>
   tasks.map(({ _id, ...rest }) => ({ ...rest, id: _id }));
