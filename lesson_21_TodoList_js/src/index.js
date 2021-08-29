@@ -1,6 +1,6 @@
-import '/index.scss';
 import { setItem, getItem } from './scripts/storage.js';
 import { getTasksList, setTask, updateTask } from './scripts/tasksGetWhey.js';
+import './index.scss';
 
 const btnElem = document.querySelector('.create-task-btn');
 const listItem = document.querySelector('.list');
