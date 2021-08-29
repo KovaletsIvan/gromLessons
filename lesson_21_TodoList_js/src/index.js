@@ -1,4 +1,4 @@
-import 'index.scss';
+import '/index.scss';
 import { setItem, getItem } from './scripts/storage.js';
 import { getTasksList, setTask, updateTask } from './scripts/tasksGetWhey.js';
 
