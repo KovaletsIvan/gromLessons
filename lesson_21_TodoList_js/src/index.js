@@ -1,5 +1,5 @@
-import { setItem, getItem } from './scripts/storage.js';
-import { getTasksList, setTask, updateTask } from './scripts/tasksGetWhey.js';
+import { setItem, getItem } from './scripts/storage';
+import { getTasksList, setTask, updateTask } from './scripts/tasksGetWhey';
 import './index.scss';
 
 const btnElem = document.querySelector('.create-task-btn');
